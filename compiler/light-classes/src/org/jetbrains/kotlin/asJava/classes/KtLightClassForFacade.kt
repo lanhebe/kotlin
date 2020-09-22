@@ -64,7 +64,7 @@ open class KtLightClassForFacade constructor(
 
     val files: Collection<KtFile> = files.toSet()
 
-    private val firstFileInFacade by lazyPub { files.iterator().next() }
+    private val firstFileInFacade by lazyPub { files.first() }
 
     private val hashCode: Int =
         computeHashCode()
@@ -194,7 +194,7 @@ open class KtLightClassForFacade constructor(
         return another is KtLightClassForFacade && Comparing.equal(another.qualifiedName, qualifiedName)
     }
 
-    override fun getElementIcon(flags: Int): Icon? = throw UnsupportedOperationException("This should be done by JetIconProvider")
+    override fun getElementIcon(flags: Int): Icon? = throw UnsupportedOperationException("This should be done by KotlinFirIconProvider")
 
     override fun isInheritor(baseClass: PsiClass, checkDeep: Boolean): Boolean {
         return baseClass.qualifiedName == CommonClassNames.JAVA_LANG_OBJECT

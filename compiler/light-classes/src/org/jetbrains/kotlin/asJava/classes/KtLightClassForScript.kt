@@ -125,7 +125,7 @@ open class KtLightClassForScript(val script: KtScript) : KtLazyLightClass(script
     override fun isEquivalentTo(another: PsiElement?): Boolean =
         another is PsiClass && Comparing.equal(another.qualifiedName, qualifiedName)
 
-    override fun getElementIcon(flags: Int): Icon? = throw UnsupportedOperationException("This should be done by JetIconProvider")
+    override fun getElementIcon(flags: Int): Icon? = throw UnsupportedOperationException("This should be done by KotlinFirIconProvider")
 
     override val originKind: LightClassOriginKind get() = LightClassOriginKind.SOURCE
 

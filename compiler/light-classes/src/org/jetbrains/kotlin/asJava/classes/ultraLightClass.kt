@@ -337,7 +337,7 @@ open class KtUltraLightClass(classOrObject: KtClassOrObject, internal val suppor
         val descriptor = classOrObject.resolve() as? ClassDescriptor ?: return
         val bindingContext = classOrObject.analyze()
 
-        // Force resolving data class members set
+        // Force resolving data class members setKtSymbolVisibility
         descriptor.unsubstitutedMemberScope.getContributedDescriptors()
 
         object : DataClassMethodGenerator(classOrObject, bindingContext) {
