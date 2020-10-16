@@ -68,6 +68,7 @@ internal class KtFirClassType(
             firBuilder.buildTypeArgument(typeArgument)
         }
     }
+
     override val nullability: KtTypeNullability get() = withValidityAssertion { KtTypeNullability.create(coneType.isNullable) }
 
     override fun asString(): String = withValidityAssertion {
